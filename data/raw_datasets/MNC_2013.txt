@@ -1,0 +1,50 @@
+WalMart,us
+Royal Dutch Shell,us
+Sinopec Group,ch
+China National Petroleum,ch
+Exxon Mobil,us
+British Petroleum,uk
+State Grid,ch
+Volkswagen,gm
+Toyota,ja
+Glencore,sz
+Total,fr
+Chevron,us
+Samsung Electronics,ks
+Berkshire Hathaway,us
+Apple,us
+AXA,fr
+GazProm,rs
+E.On,gm
+Phillips66,us
+Daimler,gm
+General Motors,us
+ENI,it
+Japan Post Holdings,ja
+Exor,it
+Industrial & Commercial Bank of China,ch
+Ford,us
+General Electric,us
+Petrobas,br
+McKesson,us
+Valero Energy,us
+Allianz,gm
+Hon Hai Precision Industry,tw
+Société Générale,fr
+AT&T,us
+CVS,us
+Pemex,mx
+Fannie Mae,us
+China Construction Bank,ch
+United Health Group,us
+BNP Paribas,fr
+PDVSA,ve
+Verizon,us
+Lukoil,rs
+GDF Suez,fr
+Honda,ja
+Rosneft Oil,rs
+Agricultural Bank of China,ch
+Assicurazioni Generali,it
+ING Group,nl
+Hewlett Packard,us
