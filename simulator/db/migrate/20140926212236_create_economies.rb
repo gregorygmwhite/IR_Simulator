@@ -4,7 +4,7 @@ class CreateEconomies < ActiveRecord::Migration
       t.integer :state_id
       t.integer :gdp_ppp, default: 0
       t.integer :gdp_per_capita, default: 0
-      t.decimal :gdp_growth, default: 0.0
+      t.float :gdp_growth, default: 0.0
       t.timestamps
     end
   end
