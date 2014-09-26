@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.integer  "state_id"
     t.integer  "gdp_ppp",        :default => 0
     t.integer  "gdp_per_capita", :default => 0
-    t.decimal  "gdp_growth",     :default => 0.0
+    t.float    "gdp_growth",     :default => 0.0
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.string   "country_code"
     t.string   "name"
     t.integer  "population",           :default => 0
-    t.decimal  "population_growth",    :default => 0.0
-    t.decimal  "internet_penetration", :default => 0.0
+    t.float    "population_growth",    :default => 0.0
+    t.float    "internet_penetration", :default => 0.0
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
