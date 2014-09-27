@@ -1,11 +1,4 @@
-General explanation,Also see: www.goodcountry.org/faq,,,,,,,,,
-"All data is 2010 data unless otherwise indicated. Countries receive scores on each indicator as a fractional rank (0=top rank, 1=lowest) relative to all countries for which data is available. The actual simple ranks per category are based on the mean fractional ranks on the 5 indicators per category (subject to maximum 2 missing values per category). The overall rank is based on the average of the category ranks.",,,,,,,,,,
-"In case of equal overall ranks, the country with the lowest low score on any of the 7 categories gets pushed down.",,,,,,,,,,
-,,,,,,,,,,
 Country,ISOcode,#MissingValues,Overall_Rank,ST_Rank,CU_Rank,PS_Rank,WO_Rank,PC_Rank,PE_Rank,HW_Rank
-Short name->,,,,"Contributions to Science, Technology & Knowledge",Contributions to Culture,Contributions to International Peace and Security,Contributions to World Order,Contributions to the Planet and Climate,Contributions to Prosperity and Equality,Contributions to Health and Wellbeing
-Indicator discription->,,,,,,,,,,
-Value label ->,,,The actual overall rank based on 125 countries included in the index and mean rank score for the 7 category ranks,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators,Actual category rank based on 125 countries included in index and mean fractional rank score for the 5 indicators
 Ireland,IRL,0,1,20,7,33,4,45,1,9
 Finland,FIN,0,2,7,18,53,12,14,3,12
 Switzerland,CHE,2,3,6,32,71,10,16,2,10
@@ -26,7 +19,7 @@ Iceland,ISL,4,17,24,37,27,15,1,101,44
 Cyprus,CYP,2,18,3,35,86,21,22,37,49
 Spain,ESP,1,19,37,23,120,24,24,49,1
 Italy,ITA,0,20,38,22,102,11,44,65,19
-United States of America,USA,1,21,26,41,114,28,39,53,7
+United States,USA,1,21,26,41,114,28,39,53,7
 Costa Rica,CRI,4,22,61,64,35,25,19,42,76
 Malta,MLT,2,23,64,3,66,6,36,99,50
 Chile,CHL,3,24,52,47,42,27,18,31,114
@@ -52,7 +45,7 @@ Czech Republic,CZE,0,43,4,8,121,34,77,100,67
 South Africa,ZAF,2,44,29,60,15,31,102,121,56
 Jamaica,JAM,5,45,65,59,23,62,87,51,72
 Croatia,HRV,2,46,35,30,62,73,52,85,84
-Republic of Korea,KOR,1,47,30,34,119,45,71,60,65
+South Korea,KOR,1,47,30,34,119,45,71,60,65
 Namibia,NAM,4,48,74,52,30,89,34,25,120
 Brazil,BRA,3,49,75,49,83,37,5,123,52
 Jordan,JOR,5,50,39,78,2,101,99,81,25
@@ -60,15 +53,15 @@ Trinidad and Tobago,TTO,5,51,76,42,25,64,110,22,86
 Poland,POL,1,52,32,16,105,26,83,83,81
 Thailand,THA,1,53,66,67,73,22,97,80,22
 Paraguay,PRY,5,54,120,56,8,60,31,125,27
-The former Yugoslav Republic of Macedonia,MKD,3,55,33,55,82,41,119,20,85
+Macedonia,MKD,3,55,33,55,82,41,119,20,85
 Tunisia,TUN,3,56,58,86,31,82,59,54,68
 Argentina,ARG,2,57,67,46,55,29,25,105,112
 Malaysia,MYS,2,58,49,28,113,87,73,10,91
 Uganda,UGA,4,59,71,108,41,66,9,91,69
-Republic of Moldova,MDA,4,60,44,65,46,51,115,84,54
+Moldova,MDA,4,60,44,65,46,51,115,84,54
 Hungary,HUN,1,61,9,13,123,59,76,78,101
 Serbia,SRB,3,62,23,31,98,52,124,52,79
-United Republic of Tanzania,TZA,4,63,113,74,3,43,93,102,32
+Tanzania,TZA,4,63,113,74,3,43,93,102,32
 Botswana,BWA,3,64,107,66,67,54,41,12,113
 Romania,ROU,1,65,48,29,75,53,69,114,74
 Mexico,MEX,4,66,70,73,91,69,84,47,30
@@ -93,7 +86,7 @@ Lebanon,LBN,3,84,53,51,115,100,64,39,88
 El Salvador,SLV,5,85,99,75,11,109,63,106,48
 Peru,PER,5,86,88,87,96,81,17,62,82
 United Arab Emirates,ARE,3,87,82,45,74,122,61,76,53
-Bolivia (Plurinational State of),BOL,4,88,116,100,22,42,78,115,41
+Bolivia,BOL,4,88,116,100,22,42,78,115,41
 Cameroon,CMR,5,89,73,120,13,70,70,45,125
 Senegal,SEN,4,90,78,114,32,83,91,59,60
 Bangladesh,BGD,3,91,100,94,52,67,117,55,34
@@ -101,7 +94,7 @@ Saudi Arabia,SAU,3,92,86,99,85,119,79,43,11
 Kuwait,KWT,4,93,85,70,18,108,104,72,83
 Honduras,HND,4,94,92,72,19,99,75,110,75
 Russian Federation,RUS,2,95,41,68,90,106,88,112,42
-Democratic Republic of the Congo,COD,5,96,83,123,49,115,47,40,92
+Congo DR,COD,5,96,83,123,49,115,47,40,92
 Togo,TGO,6,97,84,89,6,110,112,58,93
 Madagascar,MDG,5,98,80,71,17,113,49,116,106
 Ukraine,UKR,3,99,13,48,117,57,120,96,105
@@ -109,7 +102,7 @@ Oman,OMN,6,100,110,88,24,125,58,64,89
 Dominican Republic,DOM,5,101,108,69,99,46,89,113,35
 Congo,COG,4,102,121,111,60,103,8,46,117
 Nigeria,NGA,6,103,111,110,9,79,74,104,80
-Lao People's Democratic Republic,LAO,8,104,77,118,93,98,27,118,36
+Laos,LAO,8,104,77,118,93,98,27,118,36
 Sudan,SDN,4,105,118,125,118,96,54,32,24
 Pakistan,PAK,3,106,106,109,61,104,108,38,43
 China,CHN,1,107,54,91,59,94,96,108,70
@@ -120,17 +113,14 @@ Algeria,DZA,5,111,79,102,45,90,109,122,57
 Cambodia,KHM,4,112,119,101,28,117,53,92,98
 Syrian Arab Republic,SYR,4,113,96,104,57,92,113,73,77
 Philippines,PHL,3,114,115,106,64,61,82,77,107
-Iran (Islamic Republic of),IRN,3,115,93,119,72,97,103,56,73
+Iran,IRN,3,115,93,119,72,97,103,56,73
 Yemen,YEM,4,116,98,122,69,86,100,93,45
-Venezuela (Bolivarian Republic of),VEN,3,117,117,117,34,77,33,124,118
+Venezuela,VEN,3,117,117,117,34,77,33,124,118
 Benin,BEN,5,118,97,115,7,78,121,107,96
 Indonesia,IDN,3,119,122,92,36,95,92,103,97
 Zimbabwe,ZWE,5,120,60,82,68,112,125,82,119
 Angola,AGO,6,121,124,112,78,116,28,95,108
 Azerbaijan,AZE,4,122,95,107,122,74,94,86,100
 Iraq,IRQ,5,123,125,116,84,124,65,120,59
-Viet Nam,VNM,4,124,89,76,103,123,123,79,111
+Vietnam,VNM,4,124,89,76,103,123,123,79,111
 Libya,LBY,9,125,123,124,16,93,116,119,123
-,,,,,,,,,,
-Reference ->,,,,,,,,,,
-Detailed data treatment ->,,,,,,,,,,
