@@ -1,8 +1,8 @@
 class CountryList
   @@countries = {
-    'all' => ['ee','al','an','am','au','aj','bo','be','bk','bu','hr','cy','ez','da','en','fi','fr','gg','gm','uk','gr','hu','ic','ei','it','lg','ls','lh','lu','mk','mt','md','mn','mj','nl','no','pl','po','ro','rs','sm','ri','lo','si','sp','sw','sz','tu','up','vt','ca','us','mx','ac','bf','bb','cu','do','dr','gj','ha','jm','sc','st','vc','td','bh','cs','es','gt','ho','nu','pm','ar','bl','br','ci','co','ec','gy','pa','pe','ns','uy','ve','ag','ao','bn','bc','uv','by','cm','cv','ct','cd','cn','cf','cg','iv','dj','eg','ek','er','et','gb','ga','gh','gv','pu','ke','lt','li','ly','ma','mi','ml','mr','mp','mo','mz','wa','ng','ni','rw','tp','sg','se','sl','so','sf','od','su','wz','tz','to','ts','ug','za','zi','ba','ir','iz','is','jo','ku','le','mu','qa','sa','sy','ae','ym','af','bg','bt','bx','cb','ch','in','id','ja','kz','kg','la','my','mv','mg','bm','np','kn','pk','rp','sn','ks','ce','tw','ti','th','tt','tx','uz','vm','as','fj','kr','rm','fm','nr','nz','ps','pp','ws','bp','tn','tv','nh'],
+    'all' => ['ee','al','an','am','au','aj','bo','be','bk','bu','hr','cy','ez','da','en','fi','fr','gg','gm','uk','gr','hu','ic','ei','it','lg','ls','lh','lu','mk','mt','md','mn','mj','nl','no','pl','po','ro','rs','sm','ri','lo','si','sp','sw','sz','tu','up','ca','us','mx','ac','bf','bb','cu','do','dr','gj','ha','jm','sc','st','vc','td','bh','cs','es','gt','ho','nu','pm','ar','bl','br','ci','co','ec','gy','pa','pe','ns','uy','ve','ag','ao','bn','bc','uv','by','cm','cv','ct','cd','cn','cf','cg','iv','dj','eg','ek','er','et','gb','ga','gh','gv','pu','ke','lt','li','ly','ma','mi','ml','mr','mp','mo','mz','wa','ng','ni','rw','tp','sg','se','sl','so','sf','od','su','wz','tz','to','ts','ug','za','zi','ba','ir','iz','is','jo','ku','le','mu','qa','sa','sy','ae','ym','af','bg','bt','bx','cb','ch','in','id','ja','kz','kg','la','my','mv','mg','bm','np','kn','pk','rp','sn','ks','ce','tw','ti','th','tt','tx','uz','vm','as','fj','kr','rm','fm','nr','nz','ps','pp','ws','bp','tn','tv','nh'],
     'region'=> {
-      'Europe'=> ['ee','al','an','am','au','aj','bo','be','bk','bu','hr','cy','ez','da','en','fi','fr','gg','gm','uk','gr','hu','ic','ei','it','lg','ls','lh','lu','mk','mt','md','mn','mj','nl','no','pl','po','ro','rs','sm','ri','lo','si','sp','sw','sz','tu','up','vt'],
+      'Europe'=> ['ee','al','an','am','au','aj','bo','be','bk','bu','hr','cy','ez','da','en','fi','fr','gg','gm','uk','gr','hu','ic','ei','it','lg','ls','lh','lu','mk','mt','md','mn','mj','nl','no','pl','po','ro','rs','sm','ri','lo','si','sp','sw','sz','tu','up'],
       'North America'=> ['ca','us','mx'],
       'Caribbean'=> ['ac','bf','bb','cu','do','dr','gj','ha','jm','sc','st','vc','td'],
       'Central America'=> ['bh','cs','es','gt','ho','nu','pm'],
@@ -61,7 +61,6 @@ class CountryList
     'sz'=> 'switzerland',
     'tu'=> 'turkey',
     'up'=> 'ukraine',
-    'vt'=> 'vatican city',
 
     'ca'=> 'canada',
     'us'=> 'united states',
