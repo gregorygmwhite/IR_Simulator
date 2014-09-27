@@ -1,4 +1,5 @@
 require 'csv'
+
 module CountryDataLoader
   require 'json'
   def self.help
@@ -24,5 +25,13 @@ module CountryDataLoader
       internet_users[row[0]] = (row[2].to_f)/100
     end
     return internet_users
+  end
+
+  def self.get_mncs(mncs={})
+    filepath = File.expand_path("../raw_datasets/MNC_2013.csv", __FILE__)
+    CSV.foreach(filepath) do |row|
+      mncs[row[1]] = {rank: row[0], country_code: row[2]}
+    end
+    return mncs
   end
 end
