@@ -30,6 +30,16 @@ def load_mncs
   end
 end
 
+def load_economies
+  $countries_list["all"].each do |country_code|
+    current_state = State.find_by_country_code(country_code)
+    next unless current_state
+    gdp,per_capita,growth = CountryDataLoader::get_economic_stats(country_code)
+    current_state.create_economy(gdp_ppp: gdp,gdp_per_capita: per_capita, gdp_growth: growth)
+  end
+end
+
 load_countries
 load_internet_users
 load_mncs
+load_economies

@@ -34,4 +34,31 @@ module CountryDataLoader
     end
     return mncs
   end
+
+  def self.get_economic_stats(country_code)
+    filepath = File.expand_path("../countries_data/#{country_code}.json", __FILE__)
+    country_data_json = get_country_data(country_code,filepath)
+    gdp = strip_cia_numbers(country_data_json["econ"]["gdp_purchasing_power_parity"]["text"])
+    per_capita = strip_cia_numbers(country_data_json["econ"]["gdp_per_capita_ppp"]["text"])
+    growth = strip_cia_numbers(country_data_json["econ"]["gdp_real_growth_rate"]["text"])
+    return gdp,per_capita,(growth/100)
+  end
+
+  private
+  def self.strip_cia_numbers(num_text)
+    factor = get_factor(num_text)
+    num_text = num_text.gsub(/ (.+est\.).*/,"")
+    num_text = num_text.gsub(/[,$%]/,"")
+    return num_text.to_f * factor
+  end
+
+  def self.get_factor(num_text)
+    if num_text =~ /trillion/
+      return 1000000000000
+    elsif num_text =~ /billion/
+      return 1000000000
+    else
+      return 1
+    end
+  end
 end
