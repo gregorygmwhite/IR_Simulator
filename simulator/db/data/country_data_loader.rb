@@ -44,6 +44,18 @@ module CountryDataLoader
     return gdp,per_capita,(growth/100)
   end
 
+  def self.get_goodness_data(goodness={})
+    filepath = File.expand_path("../raw_datasets/goodness_ranking.csv", __FILE__)
+    CSV.foreach(filepath) do |row|
+      next if row[0] == "Country"
+      goodness[row[0]] = { overall_rank: row[3] , science_rank: row[4], 
+      cultural_rank: row[5], peace_security_rank: row[6], 
+      world_order_rank: row[7], planet_climate_rank: row[8], 
+      prosperity_equality_rank: row[9], health_rank: row[10]}
+    end
+    return goodness
+  end
+
   private
   def self.strip_cia_numbers(num_text)
     factor = get_factor(num_text)

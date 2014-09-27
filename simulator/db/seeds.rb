@@ -39,7 +39,17 @@ def load_economies
   end
 end
 
+def load_goodness
+  goodness_rankings = CountryDataLoader::get_goodness_data
+  goodness_rankings.each_pair do |country_name, goodness_info|
+    current_state = State.find_by_name(country_name)
+    next unless current_state
+    current_state.create_goodness_index!(goodness_info)
+  end
+end
+
 load_countries
 load_internet_users
 load_mncs
 load_economies
+load_goodness
