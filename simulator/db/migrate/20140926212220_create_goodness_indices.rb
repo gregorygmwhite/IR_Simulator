@@ -8,6 +8,7 @@ class CreateGoodnessIndices < ActiveRecord::Migration
       t.integer :peace_security_rank
       t.integer :world_order_rank
       t.integer :prosperity_equality_rank
+      t.integer :planet_climate_rank
       t.integer :health_rank
       t.timestamps
     end

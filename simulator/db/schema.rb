@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.integer  "peace_security_rank"
     t.integer  "world_order_rank"
     t.integer  "prosperity_equality_rank"
+    t.integer  "planet_climate_rank"
     t.integer  "health_rank"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
