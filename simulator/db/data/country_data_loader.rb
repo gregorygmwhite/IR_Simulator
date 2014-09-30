@@ -87,7 +87,6 @@ module CountryDataLoader
         combat_aircraft: row[13], attack_helicopters: row[14],
         nuclear_weapons:  row[15]}
     end
-    debugger
     return navy
   end
 
