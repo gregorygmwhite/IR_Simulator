@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.integer  "active_troops",       :default => 0
     t.integer  "reserve_troops",      :default => 0
     t.integer  "paramilitary_troops", :default => 0
-    t.integer  "tanks",               :default => 0
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
 
   create_table "navies", :force => true do |t|
     t.integer  "state_id"
+    t.integer  "tanks",              :default => 0
     t.integer  "aircraft_carriers",  :default => 0
     t.integer  "amphibious_ships",   :default => 0
     t.integer  "cruisers",           :default => 0
