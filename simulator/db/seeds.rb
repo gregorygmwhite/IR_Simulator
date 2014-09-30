@@ -48,8 +48,38 @@ def load_goodness
   end
 end
 
+def load_airforce
+  airforce = CountryDataLoader::get_airforce_data
+  airforce.each_pair do |country_name, airforce_info|
+    current_state = State.find_by_name(country_name)
+    next unless current_state
+    current_state.create_airforce!(airforce_info)
+  end
+end
+
+def load_army
+  army = CountryDataLoader::get_army_data
+  army.each_pair do |country_name, army_info|
+    current_state = State.find_by_name(country_name)
+    next unless current_state
+    current_state.create_army!(army_info)
+  end
+end
+
+def load_navy
+  navy = CountryDataLoader::get_navy_data
+  navy.each_pair do |country_name, navy_info|
+    current_state = State.find_by_name(country_name)
+    next unless current_state
+    current_state.create_navy!(navy_info)
+  end
+end
+
 load_countries
 load_internet_users
 load_mncs
 load_economies
 load_goodness
+load_airforce
+load_army
+load_navy

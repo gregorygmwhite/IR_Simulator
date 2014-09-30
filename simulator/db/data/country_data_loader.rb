@@ -56,6 +56,41 @@ module CountryDataLoader
     return goodness
   end
 
+  def self.get_airforce_data(airforce={})
+    filepath = File.expand_path("../raw_datasets/aircraft_data.csv", __FILE__)
+    CSV.foreach(filepath) do |row|
+      next if row[0] == "Country"
+      airforce[row[0]] = { fighters: row[1] , bombers: row[2], 
+      helicopters: row[3] }
+    end
+    return airforce
+  end
+
+  def self.get_army_data(army={})
+    filepath = File.expand_path("../raw_datasets/troops_data.csv", __FILE__)
+    CSV.foreach(filepath) do |row|
+      next if row[0] == "Country"
+      army[row[0]] = { active_troops: row[1], reserve_troops: row[2],
+      paramilitary_troops: row[3]}
+    end
+    return army
+  end
+
+  def self.get_navy_data(navy={})
+    filepath = File.expand_path("../raw_datasets/military_equipment_data.csv", __FILE__)
+    CSV.foreach(filepath) do |row|
+      next if row[0] == "Country"
+      navy[row[0]] = { tanks: row[2],  aircraft_carriers: row[3],
+        amphibious_ships: row[4],  cruisers: row[5],  destroyers: row[6],
+        frigates: row[7], corvettes: row[8], patrol_boats: row[10],
+        nuclear_submarines: row[11],submarines: row[12], 
+        combat_aircraft: row[13], attack_helicopters: row[14],
+        nuclear_weapons:  row[15]}
+    end
+    debugger
+    return navy
+  end
+
   private
   def self.strip_cia_numbers(num_text)
     factor = get_factor(num_text)
