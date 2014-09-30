@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140926214840) do
+ActiveRecord::Schema.define(:version => 20140930223507) do
 
   create_table "airforces", :force => true do |t|
     t.integer  "state_id"
@@ -81,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.datetime "updated_at",                        :null => false
   end
 
+  create_table "powers", :force => true do |t|
+    t.integer  "state_id"
+    t.integer  "raw_population_score", :default => 0
+    t.integer  "raw_economic_score",   :default => 0
+    t.integer  "raw_military_score",   :default => 0
+    t.integer  "raw_soft_score",       :default => 0
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
   create_table "states", :force => true do |t|
     t.string   "country_code"
     t.string   "name"
@@ -89,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20140926214840) do
     t.float    "internet_penetration", :default => 0.0
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
+    t.integer  "population_score"
   end
 
 end
