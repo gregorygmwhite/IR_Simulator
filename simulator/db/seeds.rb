@@ -75,6 +75,16 @@ def load_navy
   end
 end
 
+def create_powers
+  State.all.each do |current_state|
+    current_state.create_power!
+  end
+end
+
+def initial_power_calculation
+  State.calculate_power
+end
+
 load_countries
 load_internet_users
 load_mncs
@@ -83,3 +93,5 @@ load_goodness
 load_airforce
 load_army
 load_navy
+create_powers
+initial_power_calculation
