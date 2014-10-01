@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140930234520) do
+ActiveRecord::Schema.define(:version => 20141001182147) do
 
   create_table "airforces", :force => true do |t|
     t.integer  "state_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20140930234520) do
     t.float    "gdp_growth",     :default => 0.0
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.integer  "economic_score"
+    t.integer  "economic_score", :default => 0
   end
 
   create_table "goodness_indices", :force => true do |t|
@@ -51,16 +51,18 @@ ActiveRecord::Schema.define(:version => 20140930234520) do
     t.integer  "prosperity_equality_rank"
     t.integer  "planet_climate_rank"
     t.integer  "health_rank"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+    t.integer  "points",                   :default => 0
   end
 
   create_table "mncs", :force => true do |t|
     t.integer  "rank"
     t.integer  "state_id"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "points",     :default => 0
   end
 
   create_table "navies", :force => true do |t|
@@ -100,7 +102,10 @@ ActiveRecord::Schema.define(:version => 20140930234520) do
     t.float    "internet_penetration", :default => 0.0
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
-    t.integer  "population_score"
+    t.integer  "population_score",     :default => 0
+    t.integer  "soft_power_score",     :default => 0
+    t.integer  "mnc_points",           :default => 0
+    t.integer  "technology_points",    :default => 0
   end
 
 end

@@ -10,7 +10,7 @@ class Power < ActiveRecord::Base
   def calculate_projected_population
     current_state = self.state
     # projected population in five years = raw population score
-    projected_population = current_state.population*((1+ (current_state.population_growth/100))**5)
+    projected_population = current_state.population*((1+ (current_state.population_growth))**5)
     self.update_attributes!(raw_population_score: projected_population)
   end
 
@@ -23,12 +23,16 @@ class Power < ActiveRecord::Base
     self.update_attributes!(raw_economic_score: projected_economy)
   end
 
+
   def self.calculate_power
     top_population_score = (Power.order(:raw_population_score).last.raw_population_score).to_f
     top_economic_score = (Power.order(:raw_economic_score).last.raw_economic_score).to_f
+    top_goodness_score = (GoodnessIndex.order(:points).last.points).to_f
+    top_mnc_score = (State.order(:mnc_points).last.mnc_points).to_f
     State.all.each do |current_state|
       current_state.power.calculate_population_power(top_population_score)
       current_state.power.calculate_economic_power(top_economic_score)
+      current_state.power.calculate_soft_power(top_goodness_score, top_mnc_score)
     end
   end
 
@@ -46,5 +50,16 @@ class Power < ActiveRecord::Base
     percentage = self.raw_economic_score / top_economic_score
     economic_score = 1000 * percentage
     current_state.economy.update_attributes(:economic_score => economic_score)
+  end
+
+  def calculate_soft_power(top_goodness_score, top_mnc_score, goodness=0)
+    current_state = self.state
+    tech_score = current_state.internet_penetration * 50
+    if(current_state.goodness_index)
+      goodness = 50 * (current_state.goodness_index.points / top_goodness_score)
+    end
+    mnc_score = 50 * (current_state.mnc_points / top_mnc_score)
+    self.update_attributes(:raw_soft_score => (mnc_score + goodness + tech_score))
+    current_state.update_attributes(:soft_power_score => (mnc_score + goodness + tech_score))
   end
 end

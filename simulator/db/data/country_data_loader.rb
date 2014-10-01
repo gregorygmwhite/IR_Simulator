@@ -16,7 +16,7 @@ module CountryDataLoader
     population = country_data_json["people"]["population"]["text"].gsub(/ (.*est.)/,"")
     growth = country_data_json["people"]["population_growth_rate"]["text"].gsub(/% (.*est.)/,"")
     population = population.gsub(/,/,"").to_i
-    return population,growth.to_f
+    return population,((growth.to_f)/100)
   end
 
   def self.get_internet_users(internet_users={})
