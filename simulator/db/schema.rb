@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141001193713) do
+ActiveRecord::Schema.define(:version => 20141001203513) do
 
   create_table "airforces", :force => true do |t|
     t.integer  "state_id"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20141001193713) do
     t.integer  "mnc_points",           :default => 0
     t.integer  "technology_points",    :default => 0
     t.integer  "military_score",       :default => 0
+    t.integer  "total_power_score",    :default => 0
   end
 
 end
