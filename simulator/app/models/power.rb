@@ -4,9 +4,12 @@ class Power < ActiveRecord::Base
 
   ECON_CEILING = 750
   POP_CEILING = 500
+  MILITARY_CEILING = 1000
+
   def calculate_raw_power
     calculate_projected_population
     calculate_projected_economy
+    calculate_military_points
   end
 
   def calculate_projected_population
@@ -25,16 +28,27 @@ class Power < ActiveRecord::Base
     self.update_attributes!(raw_economic_score: projected_economy)
   end
 
+  def calculate_military_points
+    return unless self.state.army
+    army,navy,airforce = 0,0,0
+    army = self.state.army.calculate_points
+    navy = self.state.navy.calculate_points if self.state.navy
+    airforce = self.state.airforce.calculate_points if self.state.airforce
+    points = army + navy + airforce
+    self.update_attributes(raw_military_score: points)
+  end
 
   def self.calculate_power
     top_population_score = (Power.order(:raw_population_score).last.raw_population_score).to_f
     top_economic_score = (Power.order(:raw_economic_score).last.raw_economic_score).to_f
     top_goodness_score = (GoodnessIndex.order(:points).last.points).to_f
     top_mnc_score = (State.order(:mnc_points).last.mnc_points).to_f
+    top_military_score = (Power.order(:raw_military_score).last.raw_military_score).to_f
     State.all.each do |current_state|
       current_state.power.calculate_population_power(top_population_score)
       current_state.power.calculate_economic_power(top_economic_score)
       current_state.power.calculate_soft_power(top_goodness_score, top_mnc_score)
+      current_state.power.calculate_military_power(top_military_score)
     end
   end
 
@@ -63,5 +77,13 @@ class Power < ActiveRecord::Base
     mnc_score = 50 * (current_state.mnc_points / top_mnc_score)
     self.update_attributes(:raw_soft_score => (mnc_score + goodness + tech_score))
     current_state.update_attributes!(:soft_power_score => (mnc_score + goodness + tech_score))
+  end
+
+  def calculate_military_power(top_military_score)
+    # scales raw military score to a max score of 1000
+    current_state = self.state
+    percentage = self.raw_military_score / top_military_score
+    military_score = percentage * MILITARY_CEILING
+    current_state.update_attributes!(military_score: military_score)
   end
 end
