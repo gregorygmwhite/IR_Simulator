@@ -2,9 +2,14 @@ class Power < ActiveRecord::Base
   attr_accessible :raw_population_score, :raw_economic_score, :raw_military_score, :raw_soft_score
   belongs_to :state
 
+  ECON_CEILING = 750
+  POP_CEILING = 400
+  MILITARY_CEILING = 1000
+
   def calculate_raw_power
     calculate_projected_population
     calculate_projected_economy
+    calculate_military_points
   end
 
   def calculate_projected_population
@@ -23,16 +28,27 @@ class Power < ActiveRecord::Base
     self.update_attributes!(raw_economic_score: projected_economy)
   end
 
+  def calculate_military_points
+    return unless self.state.army
+    army,navy,airforce = 0,0,0
+    army = self.state.army.calculate_points
+    navy = self.state.navy.calculate_points if self.state.navy
+    airforce = self.state.airforce.calculate_points if self.state.airforce
+    points = army + navy + airforce
+    self.update_attributes(raw_military_score: points)
+  end
 
   def self.calculate_power
     top_population_score = (Power.order(:raw_population_score).last.raw_population_score).to_f
     top_economic_score = (Power.order(:raw_economic_score).last.raw_economic_score).to_f
     top_goodness_score = (GoodnessIndex.order(:points).last.points).to_f
     top_mnc_score = (State.order(:mnc_points).last.mnc_points).to_f
+    top_military_score = (Power.order(:raw_military_score).last.raw_military_score).to_f
     State.all.each do |current_state|
       current_state.power.calculate_population_power(top_population_score)
       current_state.power.calculate_economic_power(top_economic_score)
       current_state.power.calculate_soft_power(top_goodness_score, top_mnc_score)
+      current_state.power.calculate_military_power(top_military_score)
     end
   end
 
@@ -40,16 +56,16 @@ class Power < ActiveRecord::Base
     # scales raw population score to a max score of 500
     current_state = self.state
     percentage = self.raw_population_score / top_population_score
-    population_score = 500 * percentage
+    population_score = POP_CEILING * percentage
     current_state.update_attributes(:population_score => population_score)
   end
 
   def calculate_economic_power(top_economic_score)
-    # scales raw economic score to a max score of 1000
+    # scales raw economic score to a max score of 750
     current_state = self.state
     percentage = self.raw_economic_score / top_economic_score
-    economic_score = 1000 * percentage
-    current_state.economy.update_attributes(:economic_score => economic_score)
+    economic_score = ECON_CEILING * percentage
+    current_state.economy.update_attributes!(:economic_score => economic_score)
   end
 
   def calculate_soft_power(top_goodness_score, top_mnc_score, goodness=0)
@@ -60,6 +76,14 @@ class Power < ActiveRecord::Base
     end
     mnc_score = 50 * (current_state.mnc_points / top_mnc_score)
     self.update_attributes(:raw_soft_score => (mnc_score + goodness + tech_score))
-    current_state.update_attributes(:soft_power_score => (mnc_score + goodness + tech_score))
+    current_state.update_attributes!(:soft_power_score => (mnc_score + goodness + tech_score))
+  end
+
+  def calculate_military_power(top_military_score)
+    # scales raw military score to a max score of 1000
+    current_state = self.state
+    percentage = self.raw_military_score / top_military_score
+    military_score = percentage * MILITARY_CEILING
+    current_state.update_attributes!(military_score: military_score)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141001182147) do
+ActiveRecord::Schema.define(:version => 20141001203513) do
 
   create_table "airforces", :force => true do |t|
     t.integer  "state_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20141001182147) do
     t.integer  "helicopters", :default => 0
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.integer  "points",      :default => 0
   end
 
   create_table "armies", :force => true do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20141001182147) do
     t.integer  "paramilitary_troops", :default => 0
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.integer  "points",              :default => 0
   end
 
   create_table "economies", :force => true do |t|
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20141001182147) do
     t.integer  "nuclear_weapons",    :default => 0
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.integer  "points",             :default => 0
   end
 
   create_table "powers", :force => true do |t|
@@ -106,6 +109,8 @@ ActiveRecord::Schema.define(:version => 20141001182147) do
     t.integer  "soft_power_score",     :default => 0
     t.integer  "mnc_points",           :default => 0
     t.integer  "technology_points",    :default => 0
+    t.integer  "military_score",       :default => 0
+    t.integer  "total_power_score",    :default => 0
   end
 
 end
