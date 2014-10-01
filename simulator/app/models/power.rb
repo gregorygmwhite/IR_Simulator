@@ -10,7 +10,7 @@ class Power < ActiveRecord::Base
   def calculate_projected_population
     current_state = self.state
     # projected population in five years = raw population score
-    projected_population = current_state.population*((1+ (current_state.population_growth/100))**5)
+    projected_population = current_state.population*((1+ (current_state.population_growth))**5)
     self.update_attributes!(raw_population_score: projected_population)
   end
 
