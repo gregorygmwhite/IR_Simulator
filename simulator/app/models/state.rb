@@ -12,6 +12,8 @@ class State < ActiveRecord::Base
     Array(State.all).each do |current_state|
       current_state.power.calculate_raw_power
     end
+    GoodnessIndex.set_goodness_points
+    Mnc.set_mnc_points
     Power.calculate_power
   end
 end
