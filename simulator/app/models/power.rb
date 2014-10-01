@@ -3,7 +3,7 @@ class Power < ActiveRecord::Base
   belongs_to :state
 
   ECON_CEILING = 750
-  POP_CEILING = 500
+  POP_CEILING = 400
   MILITARY_CEILING = 1000
 
   def calculate_raw_power

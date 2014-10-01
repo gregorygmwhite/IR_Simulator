@@ -2,14 +2,14 @@ class Navy < ActiveRecord::Base
   attr_accessible :state_id, :tanks, :aircraft_carriers, :amphibious_ships, :cruisers, :destroyers, :frigates, :corvettes, :patrol_boats, :nuclear_submarines, :submarines, :combat_aircraft, :attack_helicopters, :nuclear_weapons, :points
   belongs_to :state
 
-  TANKS_POINTS = 100
-  AIRCRAFT_CARRIER_POINTS = 100000
+  TANKS_POINTS = 200
+  AIRCRAFT_CARRIER_POINTS = 1000000
   CRUISER_POINTS = 10000
-  DESTROYER_POINTS = 25000
-  FRIGATE_POINTS = 15000
+  DESTROYER_POINTS = 50000
+  FRIGATE_POINTS = 30000
   CORVETTE_POINTS = 1000
-  NUKE_SUB_POINTS = 25000
-  SUB_POINTS = 10000
+  NUKE_SUB_POINTS = 30000
+  SUB_POINTS = 15000
   HELICOPTER_POINTS = 500
 
   def calculate_points

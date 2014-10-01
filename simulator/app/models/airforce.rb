@@ -2,8 +2,8 @@ class Airforce < ActiveRecord::Base
   attr_accessible :state_id, :fighters, :bombers, :helicopters, :points
   belongs_to :state
 
-  FIGHTERS_POINTS = 1000
-  BOMBERS_POINTS = 1000
+  FIGHTERS_POINTS = 2000
+  BOMBERS_POINTS = 1500
   HELICOPTER_POINTS = 500
 
   def calculate_points
