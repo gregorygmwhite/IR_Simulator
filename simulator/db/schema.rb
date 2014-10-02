@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20141001203513) do
     t.float    "gdp_growth",     :default => 0.0
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.integer  "economic_score", :default => 0
   end
 
   create_table "goodness_indices", :force => true do |t|
@@ -106,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20141001203513) do
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.integer  "population_score",     :default => 0
+    t.integer  "economic_score",       :default => 0
     t.integer  "soft_power_score",     :default => 0
     t.integer  "mnc_points",           :default => 0
     t.integer  "technology_points",    :default => 0
