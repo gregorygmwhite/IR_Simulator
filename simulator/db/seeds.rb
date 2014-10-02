@@ -67,11 +67,12 @@ def load_army
 end
 
 def load_navy
-  navy = CountryDataLoader::get_navy_data
+  navy,tanks = CountryDataLoader::get_navy_data
   navy.each_pair do |country_name, navy_info|
     current_state = State.find_by_name(country_name)
     next unless current_state
     current_state.create_navy!(navy_info)
+    current_state.army.update_attributes!(tanks: tanks[country_name])
   end
 end
 
@@ -82,7 +83,7 @@ def create_powers
 end
 
 def initial_power_calculation
-  State.calculate_power
+  State.recalculate_power
 end
 
 load_countries
@@ -90,8 +91,8 @@ load_internet_users
 load_mncs
 load_economies
 load_goodness
-load_airforce
 load_army
+load_airforce
 load_navy
 create_powers
 initial_power_calculation
