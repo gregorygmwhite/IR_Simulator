@@ -22,8 +22,25 @@ RSpec.describe State, :type => :model do
       us.create_goodness_index!
       expect(us.goodness_index).to_not eq(nil)
     end
-    it "should associate goodness index" do
+    it "should associate multinational corporations" do
       expect{us.mncs << Mnc.create}.to change{us.mncs.count}.by(1)
+    end
+
+    it "should associate power model" do
+      us.create_power!
+      expect(us.power).to_not eq(nil)
+    end
+  end
+
+  context "State Power Calculations" do
+    us = FactoryGirl.create(:state) 
+    ch = FactoryGirl.create(:china) 
+    it "should reset mnc points" do 
+      2.times {us.mncs << FactoryGirl.create(:mnc)}
+      Mnc.set_mnc_points
+      expect(us.reload.mnc_points).to eq(4)
+      us.reset_mnc_points
+      expect(us.reload.mnc_points).to eq(0)
     end
   end
 end
