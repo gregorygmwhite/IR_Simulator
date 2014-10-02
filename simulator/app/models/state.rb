@@ -8,6 +8,11 @@ class State < ActiveRecord::Base
   has_one :airforce
   has_one :power
 
+  # reset mnc_points before recalculating mnc power
+  def reset_mnc_points
+    self.update_attributes!(mnc_points: 0)
+  end
+
   def self.recalculate_power
     State.calculate_power_components
     State.calculate_relative_power
@@ -20,11 +25,6 @@ class State < ActiveRecord::Base
     end
     GoodnessIndex.set_goodness_points
     Mnc.set_mnc_points
-  end
-
-  # reset mnc_points before recalculating mnc power
-  def reset_mnc_points
-    self.update_attributes!(mnc_points: 0)
   end
 
   def self.calculate_relative_power
