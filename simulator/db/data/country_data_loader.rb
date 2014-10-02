@@ -2,9 +2,6 @@ require 'csv'
 
 module CountryDataLoader
   require 'json'
-  def self.help
-    puts "CountryDataLoader::get_country_data(country_code) => given a country code will return a ruby hash with all data for that country"
-  end
 
   def self.get_country_data(country_code,filepath)
     JSON.parse( IO.read(filepath) )
@@ -30,7 +27,7 @@ module CountryDataLoader
   def self.get_mncs(mncs={})
     filepath = File.expand_path("../raw_datasets/MNC_2013.csv", __FILE__)
     CSV.foreach(filepath) do |row|
-      mncs[row[1]] = {rank: row[0], country_code: row[2]}
+      mncs[row[1]] = {rank: row[0], country_code: row[2], points: (50 - row[0].to_i)}
     end
     return mncs
   end
@@ -51,7 +48,7 @@ module CountryDataLoader
       goodness[row[0]] = { overall_rank: row[3] , science_rank: row[4], 
       cultural_rank: row[5], peace_security_rank: row[6], 
       world_order_rank: row[7], planet_climate_rank: row[8], 
-      prosperity_equality_rank: row[9], health_rank: row[10]}
+      prosperity_equality_rank: row[9], health_rank: row[10], points: (121 - row[3].to_i)}
     end
     return goodness
   end
@@ -76,18 +73,19 @@ module CountryDataLoader
     return army
   end
 
-  def self.get_navy_data(navy={})
+  def self.get_navy_data(navy={}, tanks={})
     filepath = File.expand_path("../raw_datasets/military_equipment_data.csv", __FILE__)
     CSV.foreach(filepath) do |row|
       next if row[0] == "Country"
-      navy[row[0]] = { tanks: row[2],  aircraft_carriers: row[3],
+      navy[row[0]] = { aircraft_carriers: row[3],
         amphibious_ships: row[4],  cruisers: row[5],  destroyers: row[6],
         frigates: row[7], corvettes: row[8], patrol_boats: row[10],
         nuclear_submarines: row[11],submarines: row[12], 
         combat_aircraft: row[13], attack_helicopters: row[14],
         nuclear_weapons:  row[15]}
+      tanks[row[0]] = row[2]
     end
-    return navy
+    return navy, tanks
   end
 
   private

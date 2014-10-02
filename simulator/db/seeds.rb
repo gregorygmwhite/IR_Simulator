@@ -67,11 +67,12 @@ def load_army
 end
 
 def load_navy
-  navy = CountryDataLoader::get_navy_data
+  navy,tanks = CountryDataLoader::get_navy_data
   navy.each_pair do |country_name, navy_info|
     current_state = State.find_by_name(country_name)
     next unless current_state
     current_state.create_navy!(navy_info)
+    current_state.army.update_attributes!(tanks: tanks[country_name])
   end
 end
 

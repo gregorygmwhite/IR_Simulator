@@ -2,7 +2,6 @@ class CreateNavies < ActiveRecord::Migration
   def change
     create_table :navies do |t|
       t.integer :state_id
-      t.integer :tanks, default: 0
       t.integer :aircraft_carriers, default: 0
       t.integer :amphibious_ships, default: 0
       t.integer :cruisers, default: 0
