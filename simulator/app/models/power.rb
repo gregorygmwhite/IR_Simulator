@@ -86,4 +86,23 @@ class Power < ActiveRecord::Base
     military_score = percentage * MILITARY_CEILING
     current_state.update_attributes!(military_score: military_score)
   end
+
+  def self.get_top_population
+    top_pop = Power.order(:raw_population_score).last
+    top_score = top_pop.raw_population_score
+    return top_score.to_f
+  end
+
+  def self.get_top_economy
+    top_econ = Power.order(:raw_economic_score).last
+    top_score = top_econ.raw_economic_score
+    return top_score.to_f
+  end
+
+  def self.get_top_military
+    top_military = Power.order(:raw_military_score).last
+    top_score = top_military.raw_military_score
+    return top_score.to_f
+  end
+
 end

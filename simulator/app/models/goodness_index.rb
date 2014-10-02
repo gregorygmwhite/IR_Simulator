@@ -8,4 +8,8 @@ class GoodnessIndex < ActiveRecord::Base
       country_index.update_attributes!(points: (count- country_index.overall_rank))
     end
   end
+
+  def self.get_top_goodness
+    GoodnessIndex.order(:points).last.points.to_f
+  end
 end
