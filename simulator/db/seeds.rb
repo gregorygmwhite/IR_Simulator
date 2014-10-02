@@ -83,7 +83,7 @@ def create_powers
 end
 
 def initial_power_calculation
-  State.calculate_power
+  State.recalculate_power
 end
 
 load_countries
@@ -91,8 +91,8 @@ load_internet_users
 load_mncs
 load_economies
 load_goodness
-load_airforce
 load_army
+load_airforce
 load_navy
 create_powers
 initial_power_calculation
