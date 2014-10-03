@@ -54,15 +54,16 @@ class Power < ActiveRecord::Base
     current_state.update_attributes!(:economic_score => economic_score)
   end
 
-  def calculate_soft_power(top_goodness_score, top_mnc_score, goodness=0)
-    current_state = self.state
-    tech_score = current_state.internet_penetration * 50
-    if(current_state.goodness_index)
-      goodness = 50 * (current_state.goodness_index.points / top_goodness_score)
+  def calculate_soft_power(top_goodness_score, top_mnc_score)
+    state,goodness = self.state,0
+    tech_score = state.internet_penetration * 50
+    if(state.goodness_index && state.goodness_index.points != 0)
+      goodness = 50 * (state.goodness_index.points / top_goodness_score)
     end
-    mnc_score = 50 * (current_state.mnc_points / top_mnc_score)
-    self.update_attributes(:raw_soft_score => (mnc_score + goodness + tech_score))
-    current_state.update_attributes!(:soft_power_score => (mnc_score + goodness + tech_score))
+    mnc_score = 50 * (state.mnc_points / top_mnc_score)
+    soft_power_score = mnc_score + goodness + tech_score
+    self.update_attributes!(:raw_soft_score => soft_power_score)
+    state.update_attributes!({technology_points: tech_score, soft_power_score: soft_power_score})
   end
 
   def calculate_military_power(top_military_score)

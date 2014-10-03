@@ -29,7 +29,7 @@ class State < ActiveRecord::Base
 
   def self.calculate_relative_power
     State.calculate_power_scores
-    State.total_power
+    State.calculate_total_power
   end
 
   def self.calculate_power_scores
@@ -47,13 +47,17 @@ class State < ActiveRecord::Base
     end
   end
 
-  def self.total_power
+  def self.calculate_total_power
     State.all.each do |state|
-      total_power = state.military_score + state.population_score 
-      total_power+= state.economic_score + state.soft_power_score
-      state.update_attributes!(total_power_score: total_power)
+      state.calculate_total_power
     end
   end
+
+  def calculate_total_power
+    total_power = self.military_score + self.population_score 
+    total_power+= self.economic_score + self.soft_power_score
+    self.update_attributes!(total_power_score: total_power)
+  end 
 
   def self.get_top_mnc_points
     State.order(:mnc_points).last.mnc_points.to_f
