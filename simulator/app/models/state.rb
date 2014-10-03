@@ -1,5 +1,5 @@
 class State < ActiveRecord::Base
-  attr_accessible :name, :country_code,:population, :population_growth, :internet_penetration, :population_score, :soft_power_score, :mnc_points, :military_score, :economic_score, :total_power_score
+  attr_accessible :name, :country_code, :population, :population_growth, :internet_penetration, :technology_points, :population_score, :soft_power_score, :mnc_points, :military_score, :economic_score, :total_power_score
   has_many :mncs
   has_one :economy
   has_one :goodness_index
