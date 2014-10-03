@@ -18,6 +18,7 @@ FactoryGirl.define do
     population 1300000000
     population_growth 0.01
     internet_penetration 0.6
+    association :goodness_index, factory: :goodness_index, overall_rank: 2
   end
 
   factory :power_model, class: Power do 
