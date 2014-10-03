@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(:version => 20141001203513) do
 
   create_table "economies", :force => true do |t|
     t.integer  "state_id"
-    t.integer  "gdp_ppp",        :default => 0
-    t.integer  "gdp_per_capita", :default => 0
-    t.float    "gdp_growth",     :default => 0.0
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.integer  "gdp_ppp",        :limit => 8, :default => 0
+    t.integer  "gdp_per_capita",              :default => 0
+    t.float    "gdp_growth",                  :default => 0.0
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "goodness_indices", :force => true do |t|
@@ -88,12 +88,12 @@ ActiveRecord::Schema.define(:version => 20141001203513) do
 
   create_table "powers", :force => true do |t|
     t.integer  "state_id"
-    t.integer  "raw_population_score", :default => 0
-    t.integer  "raw_economic_score",   :default => 0
-    t.integer  "raw_military_score",   :default => 0
-    t.integer  "raw_soft_score",       :default => 0
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.integer  "raw_population_score",              :default => 0
+    t.integer  "raw_economic_score",   :limit => 8, :default => 0
+    t.integer  "raw_military_score",                :default => 0
+    t.integer  "raw_soft_score",                    :default => 0
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
   end
 
   create_table "states", :force => true do |t|
