@@ -1,3 +1,26 @@
-<h1> Overall Power Scores </h1>
+<div ng-controller="powerDisplay">
+  <h1> Relative Power Scores </h1>
+  
+  <table>
+  <tr>
+    <th class="table_block">Name</th>
+    <th class="table_block">Total Power</th>
+    <th class="table_block">Military Power</th>
+    <th class="table_block">Economic Power</th>
+    <th class="table_block">Soft Power</th>
+    <th class="table_block">Population Power</th>
+  </tr>
 
-<%= @states %>
+
+  <tr ng-repeat="state in states">
+    <td class="table_block">{{state["name"]}}</td>
+    <td class="table_block">{{state["total_power_score"]}}</td>
+    <td class="table_block">{{state["military_score"]}}</td>
+    <td class="table_block">{{state["economic_score"]}}</td>
+    <td class="table_block">{{state["soft_power_score"]}}</td>
+    <td class="table_block">{{state["population_score"]}}</td>
+  </tr>
+
+  </table>
+
+</div>
