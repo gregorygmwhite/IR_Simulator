@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="powerApp">
 <head>
   <title>Simulator</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <ul>
+    <a href="/"><li class="inline-block">Home</li></a>
+    <a href="/powers"><li class="inline-block">Overall Power</li></a>
+  </ul>
 
+</nav>
 <%= yield %>
 
 </body>

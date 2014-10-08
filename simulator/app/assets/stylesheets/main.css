@@ -1,0 +1,30 @@
+h1 {
+  font-size: 2.5rem;
+  padding: .5rem;
+}
+
+h2{
+  font-size: 2rem;
+  padding: .25rem;
+}
+
+nav{
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+.inline_block{
+  display: inline-block;
+}
+
+table{
+  margin-left: 2rem;
+}
+
+.table_block {
+  padding: .4rem;
+  text-align: left;
+}
