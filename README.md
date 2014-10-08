@@ -7,6 +7,26 @@ Uses the Factbook gem to mine CIA World Factbook for data
 Will use this data in order to quantify international power 
 Will model the way states respond to one another based on their respective power and goals
 
+###Seeing the Power Indices
+Clone the repo
+```
+git clone "https://github.com/ggw215/IR_Simulator"
+```
+Get into the right directory
+```
+cd IR-Simulator
+cd simulator
+```
+Resolve Dependencies
+```
+bundle
+```
+Run the server
+```
+rails s
+```
+In your browser go to localhost:3000 to see the welcome page.
+Then to localhost:3000/powers to see the table that contains the power scores
 
 1. Data from World Bank (Historical Military Spending)
 2. Top Multinational Coroporations (Fortune Magazine)
