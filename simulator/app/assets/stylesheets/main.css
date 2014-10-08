@@ -19,3 +19,12 @@ nav ul {
 .inline_block{
   display: inline-block;
 }
+
+table{
+  margin-left: 2rem;
+}
+
+.table_block {
+  padding: .4rem;
+  text-align: left;
+}
