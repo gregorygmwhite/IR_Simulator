@@ -22,7 +22,7 @@ powerApp.controller('powerDisplay', function ($scope) {
       $scope.direction = !$scope.direction;
     } else {
       $scope.orderProp = column;
-      $scope.direction = false;
+      $scope.direction = true;
     }
   }
 })
