@@ -1,24 +1,24 @@
 <div ng-controller="powerDisplay">
   <h1> Relative Power Scores </h1>
   
-  <table>
+  <table class="power_table">
   <tr>
-    <th class="table_block">Name</th>
-    <th class="table_block">Total Power</th>
-    <th class="table_block">Military Power</th>
-    <th class="table_block">Economic Power</th>
-    <th class="table_block">Soft Power</th>
-    <th class="table_block">Population Power</th>
+    <th class="table_block"ng-click="sort('name')">Name</th>
+    <th class="table_block" ng-click="sort('total_power_score')">Total Power</th>
+    <th class="table_block" ng-click="sort('military_score')">Military Power</th>
+    <th class="table_block" ng-click="sort('economic_score')">Economic Power</th>
+    <th class="table_block" ng-click="sort('soft_power_score')">Soft Power</th>
+    <th class="table_block" ng-click="sort('population_score')">Population Power</th>
   </tr>
 
 
-  <tr ng-repeat="state in states">
-    <td class="table_block">{{state["name"]}}</td>
-    <td class="table_block">{{state["total_power_score"]}}</td>
-    <td class="table_block">{{state["military_score"]}}</td>
-    <td class="table_block">{{state["economic_score"]}}</td>
-    <td class="table_block">{{state["soft_power_score"]}}</td>
-    <td class="table_block">{{state["population_score"]}}</td>
+  <tr ng-repeat="state in states | orderBy:orderProp:direction">
+    <td class="table_block" >{{state["name"]}}</td>
+    <td class="table_block" >{{state["total_power_score"]}}</td>
+    <td class="table_block" >{{state["military_score"]}}</td>
+    <td class="table_block" >{{state["economic_score"]}}</td>
+    <td class="table_block" >{{state["soft_power_score"]}}</td>
+    <td class="table_block" >{{state["population_score"]}}</td>
   </tr>
 
   </table>

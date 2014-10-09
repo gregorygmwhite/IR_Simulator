@@ -16,15 +16,22 @@ nav ul {
   list-style: none;
 }
 
-.inline_block{
-  display: inline-block;
+.power_table{
+  margin: 3rem;
 }
 
-table{
-  margin-left: 2rem;
+.inline_block{
+  display: inline-block;
 }
 
 .table_block {
   padding: .4rem;
   text-align: left;
+  border: 1px black solid;
+}
+tr:nth-child(odd){
+  background-color: #E1E6FA;
+}
+tr:nth-child(even){
+  background-color: #C4D7ED;
 }
