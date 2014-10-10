@@ -1,18 +1,18 @@
-var powerApp = angular.module('powerApp', []);
+var powerApp = angular.module('powerApp', [])
 
-powerApp.controller('powerDisplay', function ($scope) {
+powerApp.controller('powerDisplay', ["$scope", function ($scope) {
   $scope.getStates = function(){
-    $.ajax({
+    var request = $.ajax({
       url: "states/index",
       type: "GET",
       dataType: "json"
-    })
-    .done(function( data ) {
-      $scope.states = data
-      $scope.$apply()
-    })
+    });
+    request.done(function( data ) {
+      $scope.states = data;
+      $scope.$apply();
+    });
   }
-  $scope.getStates()
+  $scope.getStates();
 
   $scope.orderProp = 'total_power_score';
   $scope.direction = true;
@@ -25,5 +25,4 @@ powerApp.controller('powerDisplay', function ($scope) {
       $scope.direction = true;
     }
   }
-})
-
+}])
