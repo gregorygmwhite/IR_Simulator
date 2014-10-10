@@ -1,0 +1,54 @@
+Connecting to database specified by database.yml
+
+
+Started GET "/powers" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Processing by PowerPresenterController#power_index as HTML
+  [1m[36mState Load (2.9ms)[0m  [1mSELECT "states".* FROM "states" ORDER BY total_power_score[0m
+  Rendered power_presenter/index.html within layouts/application (2.2ms)
+Compiled a_reset.css  (0ms)  (pid 12587)
+Compiled main.css  (0ms)  (pid 12587)
+Compiled application.css  (9ms)  (pid 12587)
+Compiled jquery.js  (34ms)  (pid 12587)
+Compiled jquery_ujs.js  (0ms)  (pid 12587)
+Compiled angular.js  (11ms)  (pid 12587)
+Compiled states.js  (0ms)  (pid 12587)
+Compiled application.js  (130ms)  (pid 12587)
+Completed 200 OK in 265.0ms (Views: 218.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /main.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/a_reset.css?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /a_reset.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/angular.js?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /angular.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/states.js?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /states.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/states/index" for 127.0.0.1 at 2014-10-09 17:02:11 -0700
+Processing by PowerPresenterController#get_states as JSON
+  [1m[35mState Load (3.4ms)[0m  SELECT "states".* FROM "states" ORDER BY total_power_score
+Completed 200 OK in 94.4ms (Views: 75.2ms | ActiveRecord: 3.4ms)
