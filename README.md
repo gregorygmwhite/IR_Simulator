@@ -8,6 +8,10 @@ Will use this data in order to quantify international power
 Will model the way states respond to one another based on their respective power and goals
 
 ###Seeing the Power Indices
+####Online
+Deployed on heroku: http://great-power-index.herokuapp.com
+
+#### On your own system
 Clone the repo
 ```
 git clone "https://github.com/ggw215/IR_Simulator"
