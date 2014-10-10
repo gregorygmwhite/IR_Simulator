@@ -22,7 +22,7 @@ class Power < ActiveRecord::Base
   def calculate_economic_points
     current_state = self.state
     # 1/3 of projected growth in five years is the modifier
-    economy = current_state.economy.gdp_ppp if current_state.economy.gdp_ppp
+    economy = current_state.economy.gdp_ppp if current_state.economy
     projected_growth = economy*((1+(current_state.economy.gdp_growth))**5) - economy
     economic_points = economy + projected_growth * 0.333333333333
     self.update_attributes!(raw_economic_score: economic_points)
