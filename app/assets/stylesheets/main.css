@@ -1,19 +1,54 @@
-h1 {
-  font-size: 2.5rem;
-  padding: .5rem;
+/*
+Colors
+Background 193441
+Foreground1 3E606F
+Foreground2 91AA9D
+Text D1DBBD
+whitish FCFFF5
+*/
+/*Style for all pages*/
+a { 
+  text-decoration: none;
+  color: #91AA9D;
+}
+a:hover{
+  color: white;
+  cursor: pointer;
 }
 
-h2{
+body{
+  background-color: #193441;
+  color: #D1DBBD;
+  font-family: Raleway, Verdana;
+}
+
+.nav{
+  height: 3.5rem;
+  background-color: #3E606F;
+  margin-bottom: 2rem;
+}
+
+.brand{
+  display: inline-block;
+  float: left;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.nav-list{
+  display: inline-block;
+  float: right;
+  margin: 1rem;
+}
+
+.nav-tabs{
+  display: inline;
+  padding: 1rem;
+}
+
+.page-title{
+  padding: 1rem;
   font-size: 2rem;
-  padding: .25rem;
-}
-
-nav{
-  display: block;
-}
-
-nav ul {
-  list-style: none;
 }
 
 .power_table{
