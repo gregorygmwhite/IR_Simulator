@@ -1,27 +1,101 @@
-h1 {
-  font-size: 2.5rem;
-  padding: .5rem;
+/*
+Colors
+Background 193441
+Foreground1 3E606F
+Foreground2 91AA9D
+Text D1DBBD
+whitish FCFFF5
+*/
+/*Style for all pages*/
+a { 
+  text-decoration: none;
+  color: #91AA9D;
+}
+a:hover{
+  color: white;
+  cursor: pointer;
 }
 
-h2{
-  font-size: 2rem;
-  padding: .25rem;
+body{
+  background-color: #193441;
+  color: #D1DBBD;
+  font-family: Raleway, Verdana;
 }
 
-nav{
-  display: block;
+.nav{
+  height: 3.5rem;
+  background-color: #3E606F;
+  margin-bottom: 2rem;
 }
 
-nav ul {
-  list-style: none;
-}
-
-.power_table{
-  margin: 3rem;
-}
-
-.inline_block{
+.brand{
   display: inline-block;
+  float: left;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.nav-list{
+  display: inline-block;
+  float: right;
+  margin: 1rem;
+}
+
+.nav-tabs{
+  display: inline;
+  padding: 1rem;
+}
+
+.page-title{
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+/*Pages with more text and their styles */
+
+.page-content{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.text-title{
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.content-full-width{
+  background-color: #3E606F;
+  text-align: center;
+  clear: both;
+}
+
+.explanation-text{
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.text-full-width{
+  background-color: #91AA9D;
+  color: #3E606F;
+}
+
+.page-content a{
+  color: #193441;
+}
+
+.page-content a:hover{
+  color: #FCFFF5;
+}
+
+/* Power Index Table Styling */
+.power_table{
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+
+.power-category-link{
+  padding: .5rem;
 }
 
 .table_block {
@@ -29,9 +103,75 @@ nav ul {
   text-align: left;
   border: 1px black solid;
 }
+.sort-button{
+  cursor: pointer;
+  float: right;
+}
 tr:nth-child(odd){
-  background-color: #E1E6FA;
+  background-color: #3E606F;
 }
 tr:nth-child(even){
-  background-color: #C4D7ED;
+  background-color: #91AA9D;
+  color: #3E606F;
+}
+
+/*Welcome Page Styling*/
+.welcome-split a{
+  color: #193441;
+}
+
+.welcome-split a:hover{
+  color: #FCFFF5;
+}
+
+.welcome-right-half li{
+  padding: 1rem;
+  float: left;
+  display: inline-block;
+}
+
+.welcome-right-half li:hover{
+  background-color: #193441;
+  border-radius: 1rem;
+}
+
+.welcome-split-content{
+  width: 90%;
+  margin: auto;
+}
+
+.welcome-left-half{
+  width: 50%;
+  float: left;
+  display: inline-block;
+  background-color: #91AA9D;
+  color: #3E606F;
+  height: 27rem;
+  overflow: scroll;
+}
+
+.welcome-right-half{
+  width: 50%;
+  float: right;
+  display: inline-block;
+  background-color: #FCFFF5;
+  color: #193441;
+  height: 27rem;
+  overflow: scroll;
+}
+
+/*Methodologies*/
+.methodology-list{
+  width: 80%;
+  margin:auto;
+  padding: 1rem;
+}
+.methodology-list li{
+  text-align: center;
+}
+
+.methodology-list li:hover{
+  background-color: #193441;
+  color:#FCFFF5;
+  border-radius: 1rem;
 }

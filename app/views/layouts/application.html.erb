@@ -2,15 +2,19 @@
 <html ng-app="powerApp">
 <head>
   <title>Simulator</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Raleway|Montserrat' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <ul>
-    <a href="/"><li class="inline-block">Home</li></a>
-    <a href="/powers"><li class="inline-block">Overall Power</li></a>
+<nav class="nav">
+  <h1 class="brand"> Power and Security Index </h1>
+  <ul class="nav-list">
+    <a href="/methods/methodologies"><li class="nav-tabs">Methodologies</li></a>
+    <a href="/powers"><li class="nav-tabs">Power Index</li></a>
+    <a href="/"><li class="nav-tabs">Home</li></a>
   </ul>
 
 </nav>
