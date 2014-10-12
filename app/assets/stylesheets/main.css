@@ -51,6 +51,43 @@ body{
   font-size: 2rem;
 }
 
+/*Pages with more text and their styles */
+
+.page-content{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.text-title{
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.content-full-width{
+  background-color: #3E606F;
+  text-align: center;
+  clear: both;
+}
+
+.explanation-text{
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.text-full-width{
+  background-color: #91AA9D;
+  color: #3E606F;
+}
+
+.page-content a{
+  color: #193441;
+}
+
+.page-content a:hover{
+  color: #FCFFF5;
+}
+
 /* Power Index Table Styling */
 .power_table{
   margin: 1rem;
@@ -79,18 +116,6 @@ tr:nth-child(even){
 }
 
 /*Welcome Page Styling*/
-.welcome-content{
-  width: 80%;
-  margin: auto;
-  margin-bottom: 3rem;
-}
-
-.welcome-content li{
-  padding: 1rem;
-  float: left;
-  display: inline-block;
-}
-
 .welcome-split a{
   color: #193441;
 }
@@ -99,15 +124,15 @@ tr:nth-child(even){
   color: #FCFFF5;
 }
 
+.welcome-right-half li{
+  padding: 1rem;
+  float: left;
+  display: inline-block;
+}
+
 .welcome-right-half li:hover{
   background-color: #193441;
   border-radius: 1rem;
-}
-
-.welcome-full-width{
-  background-color: #3E606F;
-  text-align: center;
-  clear: both;
 }
 
 .welcome-split-content{
@@ -121,7 +146,7 @@ tr:nth-child(even){
   display: inline-block;
   background-color: #91AA9D;
   color: #3E606F;
-  height: 23rem;
+  height: 27rem;
   overflow: scroll;
 }
 
@@ -131,18 +156,22 @@ tr:nth-child(even){
   display: inline-block;
   background-color: #FCFFF5;
   color: #193441;
-  height: 23rem;
+  height: 27rem;
   overflow: scroll;
 }
 
-.welcome-title{
+/*Methodologies*/
+.methodology-list{
+  width: 80%;
+  margin:auto;
   padding: 1rem;
-  font-size: 2rem;
+}
+.methodology-list li{
   text-align: center;
 }
 
-.welcome-text{
-  font-size: 1.2rem;
-  padding: 1rem;
+.methodology-list li:hover{
+  background-color: #193441;
+  color:#FCFFF5;
+  border-radius: 1rem;
 }
-
