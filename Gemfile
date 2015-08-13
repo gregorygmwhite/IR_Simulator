@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'angularjs-rails'
 gem 'unicorn'
+gem 'execjs'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
