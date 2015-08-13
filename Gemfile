@@ -4,6 +4,7 @@ gem 'rails', '3.2.19'
 gem 'jquery-rails'
 gem 'pg'
 gem 'angularjs-rails'
+gem 'activerecord-mysql-adapter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
