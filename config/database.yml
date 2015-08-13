@@ -17,4 +17,4 @@ production:
   encoding: unicode
   pool: 5
   username: simulator
-  password: <%= ENV['SIMULATOR_DATABASE_PASSWORD'] %>
+  password: password
